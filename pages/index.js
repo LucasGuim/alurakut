@@ -51,11 +51,7 @@ const ProfileRelationsBox = (props) => {
 export default function Home(props) {
 	const usuarioDono = props.githubUser;
 	const [ comunidades, setComunidades ] = useState([]);
-	// const comunidades = comunidades[0];
-	// const alteradorDeComunidades/setComunidades = comunidades[1];
-
-	console.log('Nosso teste');
-	// const comunidades = ['Alurakut'];
+	
 	const pessoasFavoritas = [
 		'MikeOfic96',
 		'suellen-oliveira1',
@@ -208,21 +204,21 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context){
-	const cookies = nookies.get(context)
-	const token = cookies.USER_TOKEN
-	const githubUser =  jwt.decode(token).githubUser;
+	// const cookies = nookies.get(context)
+	// const token = cookies.USER_TOKEN
+	// const githubUser =  jwt.decode(token).githubUser;
 	
-	if (!githubUser) {
-		return {
-		  redirect: {
-			destination: '/login',
-			permanent: false,
-		  },
-		}
-	  }	
+	// if (!githubUser) {
+	// 	return {
+	// 	  redirect: {
+	// 		destination: '/login',
+	// 		permanent: false,
+	// 	  },
+	// 	}
+	 // }	
 	return {
 		props : {
-			githubUser: githubUser
+			githubUser: 'LucasGuim'
 		}
 	}
 }
